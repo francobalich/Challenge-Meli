@@ -1,8 +1,6 @@
-import sys
-import os
 from flask import Flask, request, jsonify
 from typing import List
-from ..level_1.challenge import is_mutant
+from level_1.challenge import is_mutant
 
 app = Flask(__name__)
 
