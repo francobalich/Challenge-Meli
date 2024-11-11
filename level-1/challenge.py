@@ -34,6 +34,3 @@ def is_mutant(dna):
                 if sequence_count > 1:
                     return True
     return False
-
-resp=is_mutant(dna)
-print(resp)
