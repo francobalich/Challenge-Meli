@@ -168,18 +168,6 @@ pip-delete-this-directory.txt
 # Pytest cache
 .pytest_cache/
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-
 # Django stuff
 *.log
 local_settings.py
