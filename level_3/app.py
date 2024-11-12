@@ -19,12 +19,12 @@ def check_mutant():
     if not dna or not isinstance(dna, list) or not all(isinstance(seq, str) for seq in dna):
         return jsonify({"error": "Invalid input"}), 400
 
-    db = get_db()  # Obtiene la conexión a la base de datos para esta solicitud
+    db = get_db()
 
     try:
         if db.dna_exists(dna):
             return jsonify({"message": "DNA already exists"}), 409
-        # Verifica si el ADN pertenece a un mutante
+
         if is_mutant(dna):
             db.saveData(dna, True)
             return jsonify({"message": "Mutant detected"}), 200
@@ -36,7 +36,7 @@ def check_mutant():
 
 @app.route('/stats', methods=['GET'])
 def check_stats():
-    db = get_db()  # Obtiene la conexión a la base de datos para esta solicitud
+    db = get_db()
 
     try:
         stats=db.getStats()

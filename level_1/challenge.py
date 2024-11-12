@@ -1,11 +1,19 @@
+import re
 
 # Mutant case
 #dna = ["ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCTA", "TCACTG"]
 # No mutant case
 dna = ["ATGCGA", "CAGTGC", "TTATTT", "AGACGG", "GCGTCA", "TCACTG"]
 
+def is_valid_dna(dna):
+    """Valida que el ADN solo contenga caracteres A, T, G o C."""
+    pattern = re.compile(r'^[ATGC]+$')
+    return all(pattern.fullmatch(seq) for seq in dna)
 
 def is_mutant(dna):
+    if not is_valid_dna(dna):
+        raise ValueError("DNA contains invalid characters. Only A, T, G, and C are allowed.")
+
     n = len(dna)
     sequence_count = 0
 
