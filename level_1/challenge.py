@@ -11,6 +11,8 @@ def is_valid_dna(dna):
     return all(pattern.fullmatch(seq) for seq in dna)
 
 def is_mutant(dna):
+    if not dna:
+        raise ValueError("DNA list cannot be empty")
     if not is_valid_dna(dna):
         raise ValueError("DNA contains invalid characters. Only A, T, G, and C are allowed.")
 
